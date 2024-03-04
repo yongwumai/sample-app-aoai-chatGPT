@@ -13,6 +13,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import supersub from 'remark-supersub'
 import { ThumbDislike20Filled, ThumbLike20Filled } from "@fluentui/react-icons";
+import Loading from "../../assets/Loading.svg";
 import { XSSAllowTags } from "../../constants/xssAllowTags";
 
 interface Props {
@@ -181,7 +182,8 @@ export const Answer = ({
             <Stack className={styles.answerContainer} tabIndex={0}>
                 
                 <Stack.Item>
-                    <Stack horizontal grow>
+                    <Stack horizontal grow className={styles.subAnswerContainer}>
+                        {answer.loading && <img src={Loading} className={styles.answerLoadingButton}/>}
                         <Stack.Item grow>
                             <ReactMarkdown
                                 linkTarget="_blank"
@@ -210,10 +212,11 @@ export const Answer = ({
                                 />
                             </Stack>}
                         </Stack.Item>
+                        
                     </Stack>
                     
                 </Stack.Item>
-                <Stack horizontal className={styles.answerFooter}>
+                {/* <Stack horizontal className={styles.answerFooter}>
                 {!!parsedAnswer.citations.length && (
                     <Stack.Item
                         onKeyDown={e => e.key === "Enter" || e.key === " " ? toggleIsRefAccordionOpen() : null}
@@ -237,10 +240,10 @@ export const Answer = ({
                         </Stack>
                     </Stack.Item>
                 )}
-                {/* <Stack.Item className={styles.answerDisclaimerContainer}>
+                <Stack.Item className={styles.answerDisclaimerContainer}>
                     <span className={styles.answerDisclaimer}>AI-generated content may be incorrect</span>
-                </Stack.Item> */}
-                </Stack>
+                </Stack.Item>
+                </Stack> */}
                 {chevronIsExpanded && 
                     <div style={{ marginTop: 8, display: "flex", flexFlow: "wrap column", maxHeight: "150px", gap: "4px" }}>
                         {parsedAnswer.citations.map((citation, idx) => {

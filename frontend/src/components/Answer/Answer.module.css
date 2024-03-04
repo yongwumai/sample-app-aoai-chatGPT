@@ -9,6 +9,12 @@
     border-radius: 5.419px;
 }
 
+.subAnswerContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 .answerText {
     font-style: normal;
     font-weight: 400;
@@ -19,12 +25,17 @@
     order: 1;
     align-self: stretch;
     flex-grow: 0;
-    margin: 11px;
+    margin: 2px;
     white-space: normal;
     word-wrap: break-word;
     max-width: 800px;
     overflow-x: auto;
 }
+
+.answerText p {
+    margin: 2px;
+}
+
 
 .answerHeader {
     position: relative;
@@ -42,6 +53,12 @@
 .answerDisclaimerContainer {
     justify-content: center;
     display: flex;
+}
+
+
+.answerLoadingButton {
+    width: 22px;
+    height: 22px;
 }
 
 .answerDisclaimer {

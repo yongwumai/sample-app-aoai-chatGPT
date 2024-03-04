@@ -17,14 +17,14 @@
 .headerTitleContainer {
     display: flex;
     align-items: center;
-    margin-left: 14px;
+    margin-left: 2px;
     text-decoration: none;
 }
 
 .headerTitle {
     font-style: normal;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 14px;
     line-height: 28px;
     display: flex;
     align-items: flex-end;
@@ -34,7 +34,8 @@
 .headerIcon {
     height: 32px;
     width: auto;
-    margin-left: 36px;
+    margin-left: 18px;
+    border-radius: 2px;
 }
 
 .shareButtonContainer {
@@ -46,13 +47,13 @@
     gap: 4px;
     width: 86px;
     height: 32px;
-    background: radial-gradient(109.81% 107.82% at 100.1% 90.19%, #0F6CBD 33.63%, #2D87C3 70.31%, #8DDDD8 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    background: radial-gradient(109.81% 107.82% at 100.1% 90.19%, #1ABF7F 33.63%, #1ABF7F 70.31%, #1ABF7F 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
     border-radius: 4px;
     flex: none;
     order: 1;
     flex-grow: 0;
     position: absolute;
-    right: 20px;
+    right: 18px;
     cursor: pointer;
 }
 

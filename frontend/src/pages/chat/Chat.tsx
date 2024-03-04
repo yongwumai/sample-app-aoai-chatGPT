@@ -668,6 +668,7 @@ const Chat = () => {
                                                 <Answer
                                                     answer={{
                                                         answer: answer.content,
+                                                        loading: false,
                                                         citations: parseCitationFromMessage(messages[index - 1]),
                                                         message_id: answer.id,
                                                         feedback: answer.feedback
@@ -689,7 +690,8 @@ const Chat = () => {
                                         <div className={styles.chatMessageGpt}>
                                             <Answer
                                                 answer={{
-                                                    answer: "回答生成中...",
+                                                    answer: "思考中",
+                                                    loading: true,
                                                     citations: []
                                                 }}
                                                 onCitationClicked={() => null}

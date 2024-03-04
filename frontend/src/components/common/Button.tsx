@@ -7,24 +7,24 @@ interface ShareButtonProps extends IButtonProps {
 export const ShareButton: React.FC<ShareButtonProps> = ({onClick}) => {
     const shareButtonStyles: ICommandBarStyles & IButtonStyles = {
         root: {
-          width: 86,
-          height: 32,
-          borderRadius: 4,
-          background: 'radial-gradient(109.81% 107.82% at 100.1% 90.19%, #0F6CBD 33.63%, #2D87C3 70.31%, #8DDDD8 100%)',
+          width: '90px',
+          height: '32px',
+          borderRadius: '2px',
+          background: 'radial-gradient(109.81% 107.82% at 100.1% 90.19%, #1ABF7F 33.63%, #1ABF7F 70.31%, #1ABF7F 100%)',
         //   position: 'absolute',
         //   right: 20,
           padding: '5px 12px',
-          marginRight: '20px'
+          marginRight: '18px'
         },
         icon: {
           color: '#FFFFFF',
         },
         rootHovered: {
-          background: 'linear-gradient(135deg, #0F6CBD 0%, #2D87C3 51.04%, #8DDDD8 100%)',
+          background: 'radial-gradient(109.81% 107.82% at 100.1% 90.19%, #1ABF6F 33.63%, #1ABF6F 70.31%, #1ABF6F 100%)',
         },
         label: {
           fontWeight: 600,
-          fontSize: 14,
+          fontSize: '14px',
           lineHeight: '20px',
           color: '#FFFFFF',
         },
@@ -48,8 +48,11 @@ interface HistoryButtonProps extends IButtonProps {
 export const HistoryButton: React.FC<HistoryButtonProps> = ({onClick, text}) => {
     const historyButtonStyles: ICommandBarStyles & IButtonStyles = {
         root: {
-            width: '180px',
+            width: '90px',
             border: `1px solid #D1D1D1`,
+            borderRadius: '2px',
+            padding: '2px 12px',
+            marginRight: '18px'
           },
           rootHovered: {
             border: `1px solid #D1D1D1`,

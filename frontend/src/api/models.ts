@@ -1,5 +1,6 @@
 export type AskResponse = {
     answer: string;
+    loading: boolean | false;
     citations: Citation[];
     error?: string;
     message_id?: string;

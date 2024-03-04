@@ -13,7 +13,7 @@ interface ChatHistoryPanelProps {
 }
 
 export enum ChatHistoryPanelTabs {
-    History = "History"
+    History = "历史"
 }
 
 const commandBarStyle: ICommandBarStyles = {
@@ -36,9 +36,9 @@ export function ChatHistoryPanel(props: ChatHistoryPanelProps) {
 
     const clearAllDialogContentProps = {
         type: DialogType.close,
-        title: !clearingError? 'Are you sure you want to clear all chat history?' : 'Error deleting all of chat history',
+        title: !clearingError? '确定删除所有聊天记录吗?' : '删除所有聊天记录时出错',
         closeButtonAriaLabel: 'Close',
-        subText: !clearingError ? 'All chat history will be permanently removed.' : 'Please try again. If the problem persists, please contact the site administrator.',
+        subText: !clearingError ? '所有聊天记录被永久删除。' : '请再试一次。 如果问题仍然存在，请联系站点管理员。',
     };
     
     const modalProps = {
@@ -49,7 +49,7 @@ export function ChatHistoryPanel(props: ChatHistoryPanelProps) {
     }
 
     const menuItems: IContextualMenuItem[] = [
-        { key: 'clearAll', text: 'Clear all chat history', iconProps: { iconName: 'Delete' }},
+        { key: 'clearAll', text: '删除全部', iconProps: { iconName: 'Delete' }},
     ];
 
     const handleHistoryClick = () => {
@@ -88,15 +88,15 @@ export function ChatHistoryPanel(props: ChatHistoryPanelProps) {
         <section className={styles.container} data-is-scrollable aria-label={"chat history panel"}>
             <Stack horizontal horizontalAlign='space-between' verticalAlign='center' wrap aria-label="chat history header">
                 <StackItem>
-                    <Text role="heading" aria-level={2} style={{ alignSelf: "center", fontWeight: "600", fontSize: "18px", marginRight: "auto", paddingLeft: "20px" }}>Chat history</Text>
+                    <Text role="heading" aria-level={2} style={{ alignSelf: "center", fontWeight: "600", fontSize: "18px", marginRight: "auto", paddingLeft: "20px" }}>历史对话</Text>
                 </StackItem>
                 <Stack verticalAlign="start">
                     <Stack horizontal styles={commandBarButtonStyle}>
                         <CommandBarButton
                             iconProps={{ iconName: 'More' }}
-                            title={"Clear all chat history"}
+                            title={"清除所有聊天记录"}
                             onClick={onShowContextualMenu}
-                            aria-label={"clear all chat history"}
+                            aria-label={"清除所有聊天记录"}
                             styles={commandBarStyle}
                             role="button"
                             id="moreButton"
@@ -144,13 +144,13 @@ export function ChatHistoryPanel(props: ChatHistoryPanelProps) {
                                 <StackItem>
                                     <Text style={{ alignSelf: 'center', fontWeight: '400', fontSize: 16 }}>
                                         {appStateContext?.state.isCosmosDBAvailable?.status && <span>{appStateContext?.state.isCosmosDBAvailable?.status}</span>}
-                                        {!appStateContext?.state.isCosmosDBAvailable?.status && <span>Error loading chat history</span>}
+                                        {!appStateContext?.state.isCosmosDBAvailable?.status && <span>历史记录</span>}
                                         
                                     </Text>
                                 </StackItem>
                                 <StackItem>
                                     <Text style={{ alignSelf: 'center', fontWeight: '400', fontSize: 14 }}>
-                                        <span>Chat history can't be saved at this time</span>
+                                        <span>保存失败</span>
                                     </Text>
                                 </StackItem>
                             </Stack>
@@ -164,7 +164,7 @@ export function ChatHistoryPanel(props: ChatHistoryPanelProps) {
                                 </StackItem>
                                 <StackItem>
                                     <Text style={{ alignSelf: 'center', fontWeight: '400', fontSize: 14 }}>
-                                        <span style={{ whiteSpace: 'pre-wrap' }}>Loading chat history</span>
+                                        <span style={{ whiteSpace: 'pre-wrap' }}>加载历史记录</span>
                                     </Text>
                                 </StackItem>
                             </Stack>
